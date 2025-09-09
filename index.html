@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Organización y Gestión de la Información</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>ORGANIZACIÓN Y GESTIÓN DE LA INFORMACIÓN</h1>
+      <p class="sub">Centro de Estudios Técnicos CANALETE • CEPRODENT 2025</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="left">
+      <div class="card form-card">
+        <h2>Agregar / Editar Documento</h2>
+        <form id="docForm">
+          <input type="hidden" id="docId" />
+
+          <label>Nombre del documento</label>
+          <input type="text" id="nombre" required />
+
+          <label>Categoría</label>
+          <select id="categoria">
+            <option value="Administrativo">Administrativo</option>
+            <option value="Académico">Académico</option>
+            <option value="Financiero">Financiero</option>
+            <option value="Legal">Legal</option>
+            <option value="Otro">Otro</option>
+          </select>
+
+          <label>Etiquetas (separadas por comas)</label>
+          <input type="text" id="etiquetas" placeholder="ej: contrato, urgente" />
+
+          <label>Fecha</label>
+          <input type="date" id="fecha" />
+
+          <label>Descripción</label>
+          <textarea id="descripcion" rows="4"></textarea>
+
+          <div class="row buttons">
+            <button type="submit" id="guardar" class="btn primary">Guardar</button>
+            <button type="button" id="limpiar" class="btn">Limpiar</button>
+            <button type="button" id="exportar" class="btn">Exportar</button>
+            <label class="btn file-label">
+              Importar
+              <input type="file" id="importFile" accept="application/json" style="display:none" />
+            </label>
+          </div>
+        </form>
+      </div>
+
+      <div class="card list-card">
+        <h2>Lista de documentos</h2>
+        <div id="listaContenedor"></div>
+      </div>
+
+      <div class="card chart-card">
+        <h2>Reporte: Documentos por categoría</h2>
+        <canvas id="categoriaChart" height="120"></canvas>
+      </div>
+
+    </section>
+
+    <aside class="right">
+      <div class="card about">
+        <h3>Resumen ejecutivo</h3>
+        <p class="small">La organización y gestión de la información permite a empresas y organizaciones tomar decisiones eficientes, reducir riesgos, proteger y distribuir datos, y adquirir ventajas competitivas.</p>
+
+        <h4>Dirigido a</h4>
+        <p class="small">Estudiantes y docentes del área de asistente administrativo.</p>
+
+        <h4>Objetivo general</h4>
+        <p class="small">Implementar un sistema que administre, almacene y recupere datos de forma eficiente y segura.</p>
+
+        <details>
+          <summary>Guía de uso (Paso a paso)</summary>
+          <ol class="small">
+            <li>Rellena el formulario con los datos del documento.</li>
+            <li>Haz clic en <strong>Guardar</strong> para agregarlo a la lista.</li>
+            <li>Usa <strong>Editar</strong> en la lista para modificar un elemento.</li>
+            <li>Usa <strong>Eliminar</strong> para quitarlo.</li>
+            <li>Exporta la colección con <strong>Exportar</strong> (se descargará un archivo JSON).</li>
+            <li>Importa con <strong>Importar</strong> para restaurar o añadir documentos desde un JSON.</li>
+          </ol>
+        </details>
+
+        <h4>Alcance</h4>
+        <p class="small">Recolección, clasificación, almacenamiento, consulta y respaldo de información con capacitación y políticas de acceso.</p>
+
+        <h4>Créditos</h4>
+        <p class="small">Equipo de desarrolladores:</p>
+        <ul class="small">
+          <li>Valeris Causil Berrío</li>
+          <li>Iris Paternina Lázaro</li>
+          <li>Sebastián Márquez Ortiz</li>
+        </ul>
+
+      </div>
+
+      <div class="card annex">
+        <h4>Anexos</h4>
+        <p class="small">Diagramas, cronograma, manual de usuario y ejemplos de reportes incluidos en el entregable.</p>
+      </div>
+
+      <footer class="credits">
+        <p>© CEPRODENT - Centro de Estudios Técnicos CANALETE • 2025</p>
+      </footer>
+    </aside>
+  </main>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
